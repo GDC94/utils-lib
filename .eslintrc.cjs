@@ -24,5 +24,7 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
+       "eol-last": ["error", "never"]
+
     }
 }
