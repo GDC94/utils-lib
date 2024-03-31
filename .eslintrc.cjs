@@ -24,7 +24,9 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-       "eol-last": ["error", "never"]
+       "eol-last": ["error", "never"],
+       "@typescript-eslint/no-explicit-any": [0, { "ignoreRestArgs": true }],
+       "semi": ["off", "always"],
 
     }
 }

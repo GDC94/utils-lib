@@ -2,14 +2,15 @@
   "trailingComma": "none",
   "tabWidth": 2,
   "semi": false,
-  "jsx-semi": true,
+  "jsx-semi": false,
   "singleQuote": true,
-  "printWidth": 80,
+  "printWidth": 100,
   "padding-line-between-statements": [
     "error",
     { "blankLine": "always", "prev": "*", "next": "return" },
     { "blankLine": "always", "prev": "*", "next": "block-like" }
-  ]
+  ],
+  "quotes": ["error", "double"]
   
   
 }

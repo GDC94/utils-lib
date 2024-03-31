@@ -1,3 +1,21 @@
 #!/usr/bin/env sh
+
+# Importar el script de Husky
 . "$(dirname -- "$0")/_/husky.sh"
-npm run lint 
+
+# Permitir que el script continúe incluso si un comando falla
+set +e
+
+# Mensaje de inicio
+echo "[Automated] Running pre-commit hook"
+
+# Ejecutar Stylelint
+echo "[Automated] Stylelinting files"
+npm run lint
+
+# Verificar si hubo errores al ejecutar npm run lint
+if [ $? -ne 0 ]; then
+  # Mostrar mensaje de error y salir con código de error
+  echo "[Automated] Stylelinting failed 💀"
+  exit 1
+fi

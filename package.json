@@ -2,6 +2,7 @@
   "name": "utils-lib",
   "version": "0.0.0",
   "type": "commonjs",
+  "description": "Library that makes available many useful and common types for regular typescript developers.",
   "main": "./dist/utils-lib.umd.cjs",
   "exports": {
     ".": {
@@ -20,7 +21,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts",
-    "lint:fix": "npm run lint --fix",
+    "lint:fix": "npm run lint -- --fix",
     "check:types": "tsc --noEmit",
     "prepare": "husky install"
   },
