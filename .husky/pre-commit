@@ -12,6 +12,7 @@ echo -e "${CYAN}[Automated]${NC} Running pre-commit hook"
 
 echo -e "${CYAN}[Automated]${NC} ${CYAN}Stylelinting files${NC}"
 npm run lint:fix
+npm run build
 
 if [ $? -ne 0 ]; then
   echo -e "${RED}[Automated]${NC} ${RED}Stylelinting failed 💀${NC}"
