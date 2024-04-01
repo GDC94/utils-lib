@@ -1,26 +1,19 @@
 #!/usr/bin/env sh
 
-# Importar el script de Husky
 . "$(dirname -- "$0")/_/husky.sh"
 
-# Permitir que el script continúe incluso si un comando falla
 set +e
 
-# Colores
 RED='\033[0;31m'
 CYAN='\033[0;36m'
-NC='\033[0m' # No Color
+NC='\033[0m' 
 
-# Mensaje de inicio
 echo -e "${CYAN}[Automated]${NC} Running pre-commit hook"
 
-# Ejecutar Stylelint
 echo -e "${CYAN}[Automated]${NC} ${CYAN}Stylelinting files${NC}"
 npm run lint
 
-# Verificar si hubo errores al ejecutar npm run lint
 if [ $? -ne 0 ]; then
-  # Mostrar mensaje de error y salir con código de error
   echo -e "${RED}[Automated]${NC} ${RED}Stylelinting failed 💀${NC}"
   exit 1
 fi
