@@ -11,7 +11,6 @@ NC='\033[0m'
 echo -e "${CYAN}[Automated]${NC} Running pre-commit hook"
 
 echo -e "${CYAN}[Automated]${NC} ${CYAN}Stylelinting files${NC}"
-npm run lint
 npm run lint:fix
 
 if [ $? -ne 0 ]; then
