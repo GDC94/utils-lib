@@ -16,4 +16,4 @@
  * type MyNonArrayType = string;
  * type MyNonArrayElementType = UnboxArray<MyNonArrayType>; // string
  */
-export type UnboxArray<T extends unknown[]> = T extends (infer U)[] ? U : T;
+export type UnboxArray<T extends unknown[]> = T extends Array<infer U> ? U : T
