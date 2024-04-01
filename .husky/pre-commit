@@ -6,16 +6,21 @@
 # Permitir que el script continúe incluso si un comando falla
 set +e
 
+# Colores
+RED='\033[0;31m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
 # Mensaje de inicio
-echo "[Automated] Running pre-commit hook"
+echo -e "${CYAN}[Automated]${NC} Running pre-commit hook"
 
 # Ejecutar Stylelint
-echo "[Automated] Stylelinting files"
+echo -e "${CYAN}[Automated]${NC} ${CYAN}Stylelinting files${NC}"
 npm run lint
 
 # Verificar si hubo errores al ejecutar npm run lint
 if [ $? -ne 0 ]; then
   # Mostrar mensaje de error y salir con código de error
-  echo "[Automated] Stylelinting failed 💀"
+  echo -e "${RED}[Automated]${NC} ${RED}Stylelinting failed 💀${NC}"
   exit 1
 fi
