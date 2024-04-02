@@ -1,3 +1,3 @@
-export * from './sumBy';
-export * from './arraylable';
-export * from './sumItemsOfAnArr';
+export * from './sumBy'
+export * from './arraylable'
+export * from './sumItemsOfAnArr'
