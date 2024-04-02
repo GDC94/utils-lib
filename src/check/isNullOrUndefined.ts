@@ -1,14 +1,13 @@
-import { z } from 'zod';
+import { z } from 'zod'
 
-// Definir el esquema para validar el tipo de valor
-const nullOrUndefinedSchema = z.union([z.null(), z.undefined()]);
-type NullOrUndefined = z.infer<typeof nullOrUndefinedSchema>;
+const isNullOrUndefinedSchema = z.union([z.null(), z.undefined()])
+type NullOrUndefined = z.infer<typeof isNullOrUndefinedSchema>
 /**
  * Checks if a value is null or undefined.
- * 
+ *
  * @param {unknown} value - The value to check.
  * @returns {value is NullOrUndefined} - True if the value is null or undefined, false otherwise.
- * 
+ *
  * @example
  * // Example usage:
  * const value1 = null;
@@ -18,6 +17,6 @@ type NullOrUndefined = z.infer<typeof nullOrUndefinedSchema>;
  * isNullOrUndefined(value2); // Returns: true
  * isNullOrUndefined(value3); // Returns: false
  */
-export function isNullOrUndefined(value: unknown): value is NullOrUndefined {
-  return nullOrUndefinedSchema.safeParse(value).success;
+export function isNullOrUndefined (value: unknown): value is NullOrUndefined {
+  return isNullOrUndefinedSchema.safeParse(value).success
 }
