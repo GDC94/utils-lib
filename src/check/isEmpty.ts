@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 // Define a Zod schema for the input type
-const ZodInputSchema = z.unknown().or(z.unknown())
+const ZodInputSchema = z.unknown()
 /**
  * Checks if an object or array is empty.
  *
@@ -10,7 +10,7 @@ const ZodInputSchema = z.unknown().or(z.unknown())
  * @returns {boolean} - Returns true if the object or array is empty, otherwise returns false.
  *
  * @example
- * // Example usage:
+ * Example usage:
  * const obj = {}; // An empty object
  * const arr = []; // An empty array
  * const result1 = isEmpty(obj); // Returns: true
@@ -19,7 +19,7 @@ const ZodInputSchema = z.unknown().or(z.unknown())
  */
 export function isEmpty<T> (object: T): boolean {
   const isValidInput = ZodInputSchema.safeParse(object)
-  // If the input object is invalid, throw an error
+
   if (!isValidInput.success) {
     throw new Error(`Invalid input: ${isValidInput.error.message}`)
   }
