@@ -10,12 +10,17 @@
  * const result = sum([1, 2, 3, 4]); // Returns: 10
  *
  */
-
 export function sumItemsOfAnArr (data: number[]): number {
-  const isArr = Array.isArray(data)
-  if (!isArr) {
+  if (!Array.isArray(data)) {
     throw new Error('The argument passed to the sum function is not an array of numbers')
   }
+
+  for (const item of data) {
+    if (typeof item !== 'number' || isNaN(item)) {
+      throw new Error('The array contains non-numeric values')
+    }
+  }
+
   const totalSum = data.reduce((prev: number, current: number) => prev + current, 0)
   return totalSum
 }

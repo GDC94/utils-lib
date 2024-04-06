@@ -21,5 +21,8 @@ export default defineConfig({
   // @ts-expect-error test types are not defined
   test: {
     globals: true,
+    coverage: {
+      exclude: ["src/**/index.ts", ".eslintrc.cjs", "vite.config.ts", "commitlint.config.js", "src/vite-env.d.ts"],
+    }
   },
 });

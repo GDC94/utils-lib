@@ -19,7 +19,13 @@ export function sumBy<T> (dataSource: T[], accesor: (item: T) => number): number
   if (!isArr) {
     throw new Error('The argument passed is not an array of numbers')
   }
-  return dataSource.reduce(
-    (sum: number, item: T) => sum + accesor(item), 0
-  )
+  const sum = dataSource.reduce((total: number, item: T) => {
+    const value = accesor(item)
+    if (typeof value !== 'number' || isNaN(value)) {
+      throw new Error('The accessor function must return a number')
+    }
+    return total + value
+  }, 0)
+
+  return sum
 }
