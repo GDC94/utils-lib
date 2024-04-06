@@ -18,11 +18,11 @@ export default defineConfig({
     },
   },
   plugins: [dts({ outDir: "dist", include: ["src/"] })],
-  // @ts-expect-error test types are not defined
+  //@ts-expect-error
   test: {
     globals: true,
     coverage: {
-      exclude: ["src/**/index.ts", ".eslintrc.cjs", "vite.config.ts", "commitlint.config.js", "src/vite-env.d.ts"],
+      exclude: ["src/**/index.ts", ".eslintrc.cjs", "vite.config.ts", "commitlint.config.js", "src/vite-env.d.ts", "src/hooks"],
     }
   },
 });
