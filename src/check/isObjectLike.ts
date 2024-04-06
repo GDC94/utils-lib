@@ -4,11 +4,10 @@ type GenericObject = Record<string | number, unknown>
 
 /**
  * Checks if a value is an object.
- * 
+ *
  * @param value The value to check.
  * @returns The result.
  */
-
 
 export function isObjectLike (value: unknown): value is GenericObject {
   return (
