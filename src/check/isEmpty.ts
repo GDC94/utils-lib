@@ -30,7 +30,6 @@ export function isEmpty<T> (object: T): boolean {
     return true
   }
 
-  // Contar todas las propiedades, incluidas las no enumerables
   let count = 0
   for (const key in safeObject) {
     if (Object.prototype.hasOwnProperty.call(safeObject, key)) {

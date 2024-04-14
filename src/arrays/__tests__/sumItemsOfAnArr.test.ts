@@ -40,12 +40,10 @@ describe('[TEST] the sumItemsOfAnArr method', () => {
     expect(actual).toBe(sumOfTheFirst100Naturals)
   })
   it('Should throw an error if the argument is not an array', () => {
-    // @ts-expect-error disabled ts for testing purposes
-    expect(() => sumItemsOfAnArr('not an array')).toThrow('The argument passed to the sum function is not an array of numbers')
+    expect(() => sumItemsOfAnArr('not an array' as never)).toThrow('The argument passed to the sum function is not an array of numbers')
   })
   it('Should throw an error if the array contains non-numeric values', () => {
     const data = [1, 2, 'not a number']
-    // @ts-expect-error disabled ts for testing purposes
-    expect(() => sumItemsOfAnArr(data)).toThrow('The array contains non-numeric values')
+    expect(() => sumItemsOfAnArr(data as never)).toThrow('The array contains non-numeric values')
   })
 })

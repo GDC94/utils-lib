@@ -1,10 +1,11 @@
 import { describe, expect, it } from 'vitest'
-
 import { sumBy } from '../sumBy'
+
+type dataObjTestType = { value: number }
 
 describe('[TEST] the sumBy method', () => {
   it('should return 5', () => {
-    const dataObj = [
+    const dataObj: dataObjTestType[] = [
       { value: 2 },
       { value: 3 }
     ]
@@ -17,14 +18,14 @@ describe('[TEST] the sumBy method', () => {
     }) => item.value)
     expect(actualIsZero).toBe(0)
   }),
-  it('Should return the sum of negative values', () => {
-    const dataObj = [
-      { value: -2 },
-      { value: -3 }
-    ]
-    const actual = sumBy(dataObj, (item) => item.value)
-    expect(actual).toBe(-5)
-  })
+    it('Should return the sum of negative values', () => {
+      const dataObj = [
+        { value: -2 },
+        { value: -3 }
+      ]
+      const actual = sumBy(dataObj, (item) => item.value)
+      expect(actual).toBe(-5)
+    })
   it('Should return the sum of mixed values', () => {
     const dataObj = [
       { value: 2 },
@@ -34,13 +35,11 @@ describe('[TEST] the sumBy method', () => {
     expect(actual).toBe(-1)
   })
   it('Should return a new throw error if dataSource is not an array', () => {
-    // @ts-expect-error disabled ts for testing purposes
-    expect(() => sumBy('not an array', (item) => item.value)).toThrow('The argument passed is not an array of numbers')
+    expect(() => sumBy('not an array' as never, ({ item }: { item: dataObjTestType }) => item.value)).toThrow('The argument passed is not an array of numbers')
   })
   it('Should a new throw error if accessor does not return a number', () => {
     const dataObj = [{ value: 2 }, { value: 3 }]
-    // @ts-expect-error disabled ts for testing purposes
-    expect(() => sumBy(dataObj, (_item) => null)).toThrow('The accessor function must return a number')
+    expect(() => sumBy(dataObj, (_item) => null as never)).toThrow('The accessor function must return a number')
   })
   it('Should return the sum of decimal values', () => {
     const dataObj = [

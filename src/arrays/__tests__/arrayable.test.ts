@@ -12,13 +12,11 @@ describe('[TEST] the arrayable method', () => {
     expect(result).toEqual([])
   })
   it('Should return an empty array when input is not an array', () => {
-    // @ts-expect-error disabled ts for testing purposes
-    const result = arrayable('not an array')
+    const result = arrayable('not an array' as never)
     expect(result).toEqual([])
   })
   it('Should return an empty array when input is not an array and not null', () => {
-    // @ts-expect-error disabled ts for testing purposes
-    const result = arrayable(123)
+    const result = arrayable(123 as never)
     expect(result).toEqual([])
   })
   it('Should return the same array of objects when input is an array of objects', () => {
@@ -32,8 +30,7 @@ describe('[TEST] the arrayable method', () => {
     expect(result).toEqual(input)
   })
   it('Should return an empty array when input is undefined', () => {
-    // @ts-expect-error disabled ts for testing purposes
-    const result = arrayable(undefined)
+    const result = arrayable(undefined as never)
     expect(result).toEqual([])
   })
   it('Should return an empty array when input is null', () => {
@@ -41,8 +38,7 @@ describe('[TEST] the arrayable method', () => {
     expect(result).toEqual([])
   })
   it('Should return an empty array when input is a boolean value', () => {
-    // @ts-expect-error disabled ts for testing purposes
-    const result = arrayable(true)
+    const result = arrayable(true as never)
     expect(result).toEqual([])
   })
 })
