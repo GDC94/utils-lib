@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { sumBy } from '../sumBy'
 
-type dataObjTestType = { value: number }
+interface dataObjTestType { value: number }
 
 describe('[TEST] the sumBy method', () => {
   it('should return 5', () => {
@@ -18,14 +18,14 @@ describe('[TEST] the sumBy method', () => {
     }) => item.value)
     expect(actualIsZero).toBe(0)
   }),
-    it('Should return the sum of negative values', () => {
-      const dataObj = [
-        { value: -2 },
-        { value: -3 }
-      ]
-      const actual = sumBy(dataObj, (item) => item.value)
-      expect(actual).toBe(-5)
-    })
+  it('Should return the sum of negative values', () => {
+    const dataObj = [
+      { value: -2 },
+      { value: -3 }
+    ]
+    const actual = sumBy(dataObj, (item) => item.value)
+    expect(actual).toBe(-5)
+  })
   it('Should return the sum of mixed values', () => {
     const dataObj = [
       { value: 2 },

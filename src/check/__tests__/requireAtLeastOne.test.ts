@@ -20,13 +20,13 @@ describe('[Test] RequireAtLeastOne', () => {
       propOne: 123
     }
     const validatedObj1 = MyInterfaceSchemaForTest.parse(objectTestOne)
-    expect(typeof validatedObj1.propOne).toBe('number');
+    expect(typeof validatedObj1.propOne).toBe('number')
 
     const objectTwo: RequireAtLeastOne<MyInterface, 'propOne' | 'propTwo'> = {
       propTwo: 'hello'
     }
     const validatedObj2 = MyInterfaceSchemaForTest.parse(objectTwo)
-    expect(typeof validatedObj2.propTwo).toBe('string');
+    expect(typeof validatedObj2.propTwo).toBe('string')
     const objectTreeTest: RequireAtLeastOne<MyInterface, 'propOne' | 'propTwo'> = {
       propOne: 123,
       propTwo: 'hello'
