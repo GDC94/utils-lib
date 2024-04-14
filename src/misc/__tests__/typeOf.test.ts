@@ -9,6 +9,7 @@ describe('[TEST] Check typeOf method', () => {
     expect(typeOf(true)).toBe('boolean')
   })
   it('Should return "symbol" for symbol value', () => {
+    // eslint-disable-next-line symbol-description
     expect(typeOf(Symbol())).toBe('symbol')
   })
   it('Should return "object" for object value', () => {

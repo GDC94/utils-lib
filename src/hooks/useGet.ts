@@ -22,14 +22,12 @@ export const useGet = <T>({ key, fetcher }: UseGet<T>): GenericResponse<T> => {
   }
 }
 
-/* Usage */
 interface ResponseType {
   id: number
   title: string
   body: string
 }
 
-/* Build the fetcher */
 export const Fetcher = async (): Promise<ResponseType[]> => {
   const url = 'https://jsonplaceholder.typicode.com/posts'
   const response = await fetch(url)
