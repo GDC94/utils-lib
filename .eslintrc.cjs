@@ -27,6 +27,10 @@ module.exports = {
        "eol-last": ["error", "never"],
        "@typescript-eslint/no-explicit-any": [0, { "ignoreRestArgs": true }],
        "semi": ["off", "always"],
+       "no-new-wrappers": "off",
+       "@typescript-eslint/no-unused-expressions": "off",
+       "@typescript-eslint/no-confusing-void-expression": "off",
+       "@typescript-eslint/strict-boolean-expressions": "off"
 
     }
 }

@@ -17,7 +17,7 @@ describe('[TEST] the sumBy method', () => {
       item: { value: number }
     }) => item.value)
     expect(actualIsZero).toBe(0)
-  }),
+  })
   it('Should return the sum of negative values', () => {
     const dataObj = [
       { value: -2 },
@@ -61,7 +61,7 @@ describe('[TEST] the sumBy method', () => {
       { value: 5 },
       { value: 10 }
     ]
-    const actual = sumBy(dataObj, (item) => item.value || 0)
+    const actual = sumBy(dataObj, (item) => item.value ?? 0)
     expect(actual).toBe(15)
   })
 })
